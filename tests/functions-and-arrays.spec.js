@@ -322,4 +322,136 @@ describe('Bonus Quest - greatestProduct', () => {
     ];
     expect(greatestProduct(matrix)).toBe(16);
   });
+  it('should return 0 for edge case in 7x7 matrix', () => {
+    let matrix = [
+      [9, 9, 9, 0, 9, 9, 9],
+      [9, 9, 0, 0, 0, 9, 9],
+      [9, 0, 9, 9, 9, 0, 9],
+      [0, 0, 9, 9, 9, 0, 0],
+      [9, 0, 9, 9, 9, 0, 9],
+      [9, 9, 0, 0, 0, 9, 9],
+      [9, 9, 9, 0, 9, 9, 9],
+    ];
+    expect(greatestProduct(matrix)).toBe(0);
+  });
+  it('should return 16 for edge case top right horizontal in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 2, 2, 2, 2],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case bottom right horizontal in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 2, 2, 2, 2],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case top left horizontal in 7x7 matrix', () => {
+    let matrix = [
+      [2, 2, 2, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case bottom left horizontal in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [2, 2, 2, 2, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case top right vertical in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case bottom right vertical in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0, 0, 2],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case top left vertical in 7x7 matrix', () => {
+    let matrix = [
+      [2, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for edge case bottom left vertical in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for normal case vertical in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
+  it('should return 16 for normal case horizontal in 7x7 matrix', () => {
+    let matrix = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 2, 2, 2, 2, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    expect(greatestProduct(matrix)).toBe(16);
+  });
 });
