@@ -192,3 +192,29 @@ function greatestProduct(matrix) {
 
   return greatest
 }
+
+function greatestProductDiagonal(matrix) {
+  if (matrix.length < 4 || matrix[0].length < 4) return null
+
+  // initialize with actual product
+  let greatest = matrix[0][0]*matrix[1][1]*matrix[2][2]*matrix[3][3]
+
+  for(let i = 0 ; i < matrix.length; i++) {
+    for(let j = 0; j < matrix[i].length; j++) {
+
+      // diagonale: \
+      if (i < matrix.length-3 && j < matrix[i].length-3) {
+        let prod = matrix[i][j] * matrix[i+1][j+1] * matrix[i+2][j+2] * matrix[i+3][j+3]
+        if (prod > greatest) greatest = prod
+      }
+
+      // diagonale: /
+      if (i < matrix.length-3 && j > 2) {
+        let prod = matrix[i][j] * matrix[i+1][j-1] * matrix[i+2][j-2] * matrix[i+3][j-3]
+        if (prod > greatest) greatest = prod
+      }
+    }
+  }
+
+  return greatest
+}
