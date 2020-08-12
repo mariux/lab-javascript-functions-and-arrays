@@ -148,7 +148,7 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct(matrix) {
+function greatestProductSatisfyBDD(matrix) {
   // lets satisfy the tests only not the expectations ;)
 
   let allOne = true
@@ -165,4 +165,30 @@ function greatestProduct(matrix) {
   if (allTwo) return 16
 
   return 'BDD is only as good as the test that are defined - BOOM! ;)'
+}
+
+function greatestProduct(matrix) {
+  if (matrix.length < 4 || matrix[0].length < 4) return null
+
+  // initialize with actual product
+  let greatest = matrix[0][0]*matrix[1][0]*matrix[2][0]*matrix[3][0]
+
+  for(let i = 0 ; i < matrix.length; i++) {
+    for(let j = 0; j < matrix[i].length; j++) {
+
+      // horizontal
+      if (j < matrix[i].length-3) {
+        let prod = matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3]
+        if (prod > greatest) greatest = prod
+      }
+
+      // vertical
+      if (i < matrix.length-3) {
+        let prod = matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j]
+        if (prod > greatest) greatest = prod
+      }
+    }
+  }
+
+  return greatest
 }
